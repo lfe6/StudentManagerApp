@@ -47,5 +47,13 @@ public class Student {
 	public void setFirstName(String firstname) {
 		this.firstname = firstname;
 	}
+	
+	public String getStudentId() {
+		return studentId;
+	}
+
+	public void setStudentId(String studentId) {
+		this.studentId = studentId;
+	}
 
 }
