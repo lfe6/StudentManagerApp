@@ -1,27 +1,39 @@
 package ie.gmit.studentmanager;
+import java.util.*;
+import java.io.Serializable;
 
-public class Student {
-
-	private String firstname;
-	private String studentId;
-	private String surname;
-	private Address address;
-	private Course course;
-	private byte age;
-
-	// constructor
-	public Student(String sid) {
-		this.studentId = sid;
+public class Student implements Serializable{
+    private String studentId;
+    private String firstName;
+    private String surname;
+    private Date dob;
+    private Address address;
+    private Course course;
+    
+    public Student(String sid){
+        this.studentId = sid;
+    }
+    
+    public Student(String sid, String fname, String sname, Date dob){
+        this(sid);
+        this.firstName = fname;
+        this.surname = sname;
+        this.dob = dob;
+    }
+	public String getStudentId() {
+		return studentId;
 	}
 
-	public Student(String studentId, Course course, String surname, String firstname, Address address, byte age) {
-		this.firstname = firstname;
-		this.age = age;
-		this.surname = surname;
-		this.address = address;
-		this.course = course;
+	public void setStudentId(String studentId) {
 		this.studentId = studentId;
+	}
 
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
 	}
 
 	public String getSurname() {
@@ -32,28 +44,30 @@ public class Student {
 		this.surname = surname;
 	}
 
-	public byte getAge() {
-		return age;
+	public Date getDob() {
+		return dob;
 	}
 
-	public void setAge(byte age) {
-		this.age = age;
+	public void setDob(Date dob) {
+		this.dob = dob;
 	}
 
-	public String getFirstName() {
-		return firstname;
+	public Address getAddress() {
+		return address;
 	}
 
-	public void setFirstName(String firstname) {
-		this.firstname = firstname;
-	}
-	
-	public String getStudentId() {
-		return studentId;
+	public void setAddress(Address address) {
+		this.address = address;
 	}
 
-	public void setStudentId(String studentId) {
-		this.studentId = studentId;
+	public Course getCourse() {
+		return course;
 	}
 
+	public void setCourse(Course course) {
+		this.course = course;
+	}
+	public String toString(){
+        return new String(this.studentId + "-" + this.firstName + "-" + this.surname + "-" + this.dob);   
+    }    
 }
