@@ -54,10 +54,26 @@ public class Runner extends Application {
 		Button buttonSearchByID = new Button("Search by ID");
 		TextField SearchByID = new TextField("Search by ID");
 
+		TextArea myOutput = new TextArea();
+		buttonSearchByID.setOnAction(e -> {
+			if(!SearchByID.getText().trim().equals("")) {
+			Student studentObj = sm.getStudentByID(SearchByID.getText());
+			if(studentObj != null) {
+				myOutput.setText(studentObj.toString());
+			}else {
+				myOutput.setText("No student found byI iD" + SearchByID.getText());
+			}
+			SearchByID.clear();
+		}else{
+			myOutput.setText("Please enter the student ID you want to search for");
+		}
+		});
+		
+
 		Button buttonSearchByFirstName = new Button("Search by First Name");
 		TextField SearchByFirstName = new TextField("First name");
 
-		TextArea myOutput = new TextArea();
+	
 		Button buttonShowTotal = new Button("Show Total Students");
 
 		TextField ShowTotal = new TextField("Total students");
@@ -103,8 +119,6 @@ public class Runner extends Application {
 		myGridPane.add(ShowTotal, 1, 6);
 		myGridPane.add(SaveDB, 1, 7);
 		myGridPane.add(Quit, 1, 8);
-
-		// buttonShowTotal.setOnAction(event -> ShowTotal.setText("added 12 students"));
 
 		/* Preparing the Scene */
 		// Create a Scene by passing the root group object, height and width
