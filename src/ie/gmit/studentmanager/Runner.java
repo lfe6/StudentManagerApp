@@ -41,22 +41,25 @@ public class Runner extends Application {
 		
 		Button buttonAdd = new Button("Add Student");
 		TextField Add = new TextField("Add Student");
-		
+		buttonAdd.setOnAction(e ->{
+		sm.add(new Student(Add.getText()));
+		});
 		Button buttonDelete = new Button("Delete Student");
 		TextField Delete = new TextField("Delete Student");
 		
-		Button buttonSearchByID = new Button("Search by ID");
+				Button buttonSearchByID = new Button("Search by ID");
 		TextField SearchByID = new TextField("Search by ID");
-		
+
 		Button buttonSearchByFirstName = new Button("Search by First Name");
 		TextField SearchByFirstName = new TextField("First name");
 		
 		TextArea myOutput = new TextArea();
 		Button buttonShowTotal = new Button("Show Total Students");
-		buttonShowTotal.setOnAction(e ->{
-			myOutput.setText(Integer.toString(sm.findTotalStudents()));
-		});
+	
 		TextField ShowTotal = new TextField("Total students");
+		buttonShowTotal.setOnAction(e ->{
+			ShowTotal.setText(Integer.toString(sm.findTotalStudents()));
+		});
 		
 		Button buttonSaveDB = new Button("Save DB");
 		TextField SaveDB= new TextField("Save");
