@@ -26,7 +26,7 @@ public class Menu {
             // Execute option
             selectOption(userMenuOption);
             pressEnterKeyToContinue();
-        }       
+        }        
     }
     
     private void showOptions(){
@@ -162,4 +162,5 @@ public class Menu {
         	   e.printStackTrace();
            }  
     }
+    
 }

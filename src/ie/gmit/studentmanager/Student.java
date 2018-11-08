@@ -1,6 +1,7 @@
 package ie.gmit.studentmanager;
-import java.util.*;
+
 import java.io.Serializable;
+import java.util.*; // For Date obj
 
 public class Student implements Serializable{
     private String studentId;
@@ -20,6 +21,7 @@ public class Student implements Serializable{
         this.surname = sname;
         this.dob = dob;
     }
+
 	public String getStudentId() {
 		return studentId;
 	}
@@ -67,6 +69,8 @@ public class Student implements Serializable{
 	public void setCourse(Course course) {
 		this.course = course;
 	}
+	
+	// Print string of student details instead of object ID
 	public String toString(){
         return new String(this.studentId + "-" + this.firstName + "-" + this.surname + "-" + this.dob);   
     }    
