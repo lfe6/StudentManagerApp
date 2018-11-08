@@ -44,8 +44,13 @@ public class Runner extends Application {
 		buttonAdd.setOnAction(e ->{
 		sm.add(new Student(Add.getText()));
 		});
+		
 		Button buttonDelete = new Button("Delete Student");
 		TextField Delete = new TextField("Delete Student");
+		buttonDelete.setOnAction(e ->{
+			sm.delete(Delete.getText());
+			});
+		
 		
 				Button buttonSearchByID = new Button("Search by ID");
 		TextField SearchByID = new TextField("Search by ID");
