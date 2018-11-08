@@ -31,48 +31,46 @@ public class Runner extends Application {
 	Scene scene2;
 	GridPane gridPane1;
 	VBox vBox1;
-	
+
 	@Override
 	public void start(Stage primaryStage) {
 
 		Text myText = new Text("Please select a Menu Option below:");
 		Button buttonLoadDB = new Button("Load DB");
 		TextField LoadDB = new TextField("Load DB");
-		
+
 		Button buttonAdd = new Button("Add Student");
 		TextField Add = new TextField("Add Student");
-		buttonAdd.setOnAction(e ->{
-		sm.add(new Student(Add.getText()));
+		buttonAdd.setOnAction(e -> {
+			sm.add(new Student(Add.getText()));
 		});
-		
+
 		Button buttonDelete = new Button("Delete Student");
 		TextField Delete = new TextField("Delete Student");
-		buttonDelete.setOnAction(e ->{
+		buttonDelete.setOnAction(e -> {
 			sm.delete(Delete.getText());
-			});
-		
-		
-				Button buttonSearchByID = new Button("Search by ID");
+		});
+
+		Button buttonSearchByID = new Button("Search by ID");
 		TextField SearchByID = new TextField("Search by ID");
 
 		Button buttonSearchByFirstName = new Button("Search by First Name");
 		TextField SearchByFirstName = new TextField("First name");
-		
+
 		TextArea myOutput = new TextArea();
 		Button buttonShowTotal = new Button("Show Total Students");
-	
+
 		TextField ShowTotal = new TextField("Total students");
-		buttonShowTotal.setOnAction(e ->{
+		buttonShowTotal.setOnAction(e -> {
 			ShowTotal.setText(Integer.toString(sm.findTotalStudents()));
 		});
-		
+
 		Button buttonSaveDB = new Button("Save DB");
-		TextField SaveDB= new TextField("Save");
-		
-		Button buttonQuit = new Button("Quit");	
+		TextField SaveDB = new TextField("Save");
+
+		Button buttonQuit = new Button("Quit");
 		TextField Quit = new TextField("Quit");
-		
-		
+
 		GridPane myGridPane = new GridPane();
 
 		// Setting the padding
@@ -95,19 +93,19 @@ public class Runner extends Application {
 		myGridPane.add(buttonShowTotal, 0, 6);
 		myGridPane.add(buttonSaveDB, 0, 7);
 		myGridPane.add(buttonQuit, 0, 8);
-		myGridPane.add(myOutput, 0,9,2,1 );
-		
-		myGridPane.add(LoadDB,1,1);
-		myGridPane.add(Add,1,2);
-		myGridPane.add(Delete,1,3);
-		myGridPane.add(SearchByID,1,4);
-		myGridPane.add(SearchByFirstName,1,5);
-		myGridPane.add(ShowTotal,1,6);
-		myGridPane.add(SaveDB,1,7);
-		myGridPane.add(Quit,1,8);
-		
-		//buttonShowTotal.setOnAction(event -> ShowTotal.setText("added 12 students"));
-		
+		myGridPane.add(myOutput, 0, 9, 2, 1);
+
+		myGridPane.add(LoadDB, 1, 1);
+		myGridPane.add(Add, 1, 2);
+		myGridPane.add(Delete, 1, 3);
+		myGridPane.add(SearchByID, 1, 4);
+		myGridPane.add(SearchByFirstName, 1, 5);
+		myGridPane.add(ShowTotal, 1, 6);
+		myGridPane.add(SaveDB, 1, 7);
+		myGridPane.add(Quit, 1, 8);
+
+		// buttonShowTotal.setOnAction(event -> ShowTotal.setText("added 12 students"));
+
 		/* Preparing the Scene */
 		// Create a Scene by passing the root group object, height and width
 		Scene scene = new Scene(myGridPane, 500, 500);
